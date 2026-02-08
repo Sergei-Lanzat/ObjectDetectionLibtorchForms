@@ -221,8 +221,25 @@ DetectionOutput YoloModel::post_process(const std::vector<torch::Tensor>& predic
 
 bool YoloModel::load_pretrained(const std::string& weights_path) {
     try {
-        torch::load(this, weights_path);
-        std::cout << "Loaded pre-trained weights from: " << weights_path << std::endl;
+        torch::NoGradGuard no_grad;
+        auto scripted = torch::jit::load(weights_path);
+
+        auto scripted_params = scripted.named_parameters();
+        auto scripted_buffers = scripted.named_buffers();
+
+        for (auto& param : this->named_parameters()) {
+            if (auto* pretrained = scripted_params.find(param.key())) {
+                param.value().copy_(*pretrained);
+            }
+        }
+
+        for (auto& buffer : this->named_buffers()) {
+            if (auto* pretrained = scripted_buffers.find(buffer.key())) {
+                buffer.value().copy_(*pretrained);
+            }
+        }
+
+        std::cout << "Loaded pre-trained TorchScript weights from: " << weights_path << std::endl;
         return true;
     } catch (const std::exception& e) {
         std::cerr << "Error loading weights: " << e.what() << std::endl;
