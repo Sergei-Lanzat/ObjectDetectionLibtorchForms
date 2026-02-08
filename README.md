@@ -138,7 +138,7 @@ config.input_height = 640;
 // Create model
 auto model = std::make_shared<yolo::YoloModel>(config);
 
-// Load pre-trained weights (optional)
+// Load pre-trained TorchScript weights (optional, uses torch::jit::load under the hood)
 model->load_pretrained("yolov5s_pretrained.pt"); // or "yolo26l.pt" for YOLO26-L detection
 
 // Configure training
