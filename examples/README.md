@@ -90,6 +90,7 @@ Recommended split: 80% training, 20% validation
 Download pre-trained YOLO weights for transfer learning:
 - **YOLOv5**: https://github.com/ultralytics/yolov5/releases
 - **YOLOv8**: https://github.com/ultralytics/ultralytics/releases
+- **YOLO26-L**: use your `yolo26l.pt` pretrained weights when selecting the YOLO26L model type
 
 Convert PyTorch models to LibTorch:
 ```python

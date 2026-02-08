@@ -23,7 +23,7 @@ struct YoloConfig {
     float conf_threshold = 0.25f;
     float iou_threshold = 0.45f;
     int max_detections = 300;
-    std::string model_type = "yolov5s"; // yolov5s, yolov5m, yolov5l, yolov8s, etc.
+    std::string model_type = "yolov5s"; // yolov5s, yolov5m, yolov5l, yolov8s, yolo26l, etc.
 };
 
 // Conv + BatchNorm + SiLU activation block

@@ -184,7 +184,7 @@ namespace YoloTrainerGUI {
             this->cmbModelType->Size = System::Drawing::Size(150, 21);
             this->cmbModelType->DropDownStyle = ComboBoxStyle::DropDownList;
             this->cmbModelType->Items->AddRange(gcnew cli::array<Object^> {
-                L"YOLOv5s", L"YOLOv5m", L"YOLOv5l", L"YOLOv8s", L"YOLOv8m"
+                L"YOLOv5s", L"YOLOv5m", L"YOLOv5l", L"YOLOv8s", L"YOLOv8m", L"YOLO26L"
             });
             this->cmbModelType->SelectedIndex = 0;
 

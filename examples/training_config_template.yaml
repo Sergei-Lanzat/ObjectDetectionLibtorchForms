@@ -2,7 +2,7 @@
 
 ## Model Configuration
 model:
-  type: "yolov5s"              # yolov5s, yolov5m, yolov5l, yolov8s, yolov8m
+  type: "yolov5s"              # yolov5s, yolov5m, yolov5l, yolov8s, yolov8m, yolo26l
   num_classes: 80              # Number of classes in your dataset
   input_size: 640              # Input image size (must be multiple of 32)
   pretrained: ""               # Path to pre-trained weights (empty for random init)
