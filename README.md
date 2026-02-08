@@ -10,7 +10,7 @@ Modern C++ WinForms application for training YOLO object detection models using 
 ## 🎯 Features
 
 - **🖥️ Modern WinForms GUI**: Intuitive interface for training configuration and monitoring
-- **🚀 Multiple YOLO Versions**: Support for YOLOv5 (s/m/l) and YOLOv8 (s/m) architectures
+- **🚀 Multiple YOLO Versions**: Support for YOLOv5 (s/m/l), YOLOv8 (s/m), and YOLO26-L architectures
 - **🔄 Transfer Learning**: Fine-tune pre-trained models on custom datasets
 - **📊 Real-time Visualization**: Live training loss convergence graphs
 - **🔧 Format Conversion**: Built-in converter for COCO, Pascal VOC, and LabelImg annotations to YOLO format
@@ -139,7 +139,7 @@ config.input_height = 640;
 auto model = std::make_shared<yolo::YoloModel>(config);
 
 // Load pre-trained weights (optional)
-model->load_pretrained("yolov5s_pretrained.pt");
+model->load_pretrained("yolov5s_pretrained.pt"); // or "yolo26l.pt" for YOLO26-L detection
 
 // Configure training
 yolo::TrainingConfig train_config;

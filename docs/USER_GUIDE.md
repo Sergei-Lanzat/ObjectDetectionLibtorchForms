@@ -5,7 +5,7 @@ This application provides a modern WinForms GUI for training YOLO (You Only Look
 
 ## Features
 - **Modern GUI**: Intuitive WinForms interface for configuring and monitoring training
-- **Multiple YOLO Versions**: Support for YOLOv5 (s/m/l) and YOLOv8 (s/m) architectures
+- **Multiple YOLO Versions**: Support for YOLOv5 (s/m/l), YOLOv8 (s/m), and YOLO26-L architectures
 - **Fine-tuning**: Load pre-trained weights and fine-tune on custom datasets
 - **Data Format Conversion**: Convert COCO, Pascal VOC, or LabelImg annotations to YOLO format
 - **Real-time Visualization**: Live convergence graph showing training loss
@@ -128,7 +128,7 @@ Where all coordinates are normalized (0-1):
 2. **Validation Dataset Path** (optional): Select validation dataset for monitoring performance
 
 ### Step 2: Configure Model
-1. **Model Type**: Choose YOLO variant (YOLOv5s recommended for beginners)
+1. **Model Type**: Choose YOLO variant (YOLOv5s recommended for beginners; select YOLO26L when using yolo26l.pt weights)
 2. **Number of Classes**: Set to match your dataset
 3. **Input Size**: Image resolution (640 recommended, higher = better accuracy but slower)
 4. **Load Pre-trained Weights** (optional):
