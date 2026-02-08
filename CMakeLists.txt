@@ -5,6 +5,13 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 # Find LibTorch
+if (NOT Torch_DIR)
+    set(LIBTORCH_LOCAL_PATH "${PROJECT_SOURCE_DIR}/libtorch")
+    if (EXISTS "${LIBTORCH_LOCAL_PATH}/share/cmake/Torch/TorchConfig.cmake")
+        list(PREPEND CMAKE_PREFIX_PATH "${LIBTORCH_LOCAL_PATH}")
+        set(Torch_DIR "${LIBTORCH_LOCAL_PATH}/share/cmake/Torch")
+    endif ()
+endif ()
 find_package(Torch REQUIRED)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${TORCH_CXX_FLAGS}")
 
