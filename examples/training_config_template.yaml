@@ -1,0 +1,66 @@
+# YOLO Training Configuration Template
+
+## Model Configuration
+model:
+  type: "yolov5s"              # yolov5s, yolov5m, yolov5l, yolov8s, yolov8m
+  num_classes: 80              # Number of classes in your dataset
+  input_size: 640              # Input image size (must be multiple of 32)
+  pretrained: ""               # Path to pre-trained weights (empty for random init)
+
+## Dataset Configuration
+dataset:
+  train_path: "data/train"     # Path to training dataset
+  val_path: "data/val"         # Path to validation dataset
+  test_path: ""                # Optional test dataset path
+  augmentation: true           # Enable data augmentation
+  mosaic: true                 # Enable mosaic augmentation
+  mixup: false                 # Enable mixup augmentation
+
+## Training Configuration
+training:
+  epochs: 100                  # Number of training epochs
+  batch_size: 16               # Batch size (adjust based on GPU memory)
+  learning_rate: 0.01          # Initial learning rate
+  weight_decay: 0.0005         # Weight decay (L2 regularization)
+  momentum: 0.937              # Momentum for SGD
+  
+  optimizer: "SGD"             # SGD, Adam, AdamW
+  scheduler: "cosine"          # cosine, step, none
+  
+  warmup_epochs: 3             # Learning rate warmup epochs
+  freeze_backbone: false       # Freeze backbone layers
+  freeze_epochs: 0             # Number of epochs to keep backbone frozen
+  
+  save_interval: 10            # Save checkpoint every N epochs
+  log_interval: 10             # Log progress every N batches
+  checkpoint_dir: "checkpoints" # Directory for saving checkpoints
+  
+  resume: false                # Resume from checkpoint
+  resume_checkpoint: ""        # Path to checkpoint to resume from
+
+## Hardware Configuration
+hardware:
+  device: "cuda"               # cuda, cpu
+  num_workers: 4               # Number of data loading workers
+  pin_memory: true             # Pin memory for faster data transfer
+
+## Loss Configuration
+loss:
+  box_weight: 0.05             # Box loss weight
+  obj_weight: 1.0              # Objectness loss weight
+  cls_weight: 0.5              # Classification loss weight
+  iou_type: "CIoU"             # IoU type: IoU, GIoU, DIoU, CIoU
+
+## Export Configuration
+export:
+  onnx_path: "model.onnx"      # Path for ONNX export
+  opset_version: 11            # ONNX opset version
+  simplify: true               # Simplify ONNX model
+
+## Notes:
+# - Adjust batch_size based on your GPU memory (16GB -> batch_size 16-32)
+# - Use pretrained weights for better results with small datasets
+# - Enable augmentation for improved generalization
+# - Monitor validation loss to detect overfitting
+# - Use warmup for stable training start
+# - Freeze backbone when fine-tuning on similar tasks

@@ -1,0 +1,19 @@
+# Sample Label File Format
+
+# This is an example of a YOLO format label file
+# Each line represents one bounding box with the format:
+# <class_id> <x_center> <y_center> <width> <height>
+#
+# All coordinates are normalized (0.0 to 1.0):
+# - x_center: center X coordinate / image width
+# - y_center: center Y coordinate / image height
+# - width: box width / image width
+# - height: box height / image height
+#
+# Example annotations:
+
+0 0.5 0.5 0.3 0.4
+1 0.2 0.3 0.15 0.2
+
+# Line 1: class_id=0 (person), centered at (0.5, 0.5), size 0.3x0.4
+# Line 2: class_id=1 (car), centered at (0.2, 0.3), size 0.15x0.2
