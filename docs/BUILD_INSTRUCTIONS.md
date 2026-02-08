@@ -17,6 +17,7 @@ Before building this project, ensure you have the following installed:
    - Choose CUDA version if you have NVIDIA GPU, or CPU-only
    
 2. Extract the downloaded archive (e.g., `libtorch-win-shared-with-deps-2.0.0+cu118.zip`)
+   - Recommended: extract directly to `ObjectDetectionLibtorchForms/libtorch` (CMake and the Visual Studio projects look here automatically)
 
 3. Set environment variable:
    ```cmd
