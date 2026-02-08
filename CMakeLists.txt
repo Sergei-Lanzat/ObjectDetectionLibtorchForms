@@ -12,7 +12,10 @@ if (NOT Torch_DIR)
         set(Torch_DIR "${LIBTORCH_LOCAL_PATH}/share/cmake/Torch")
     endif ()
 endif ()
-find_package(Torch REQUIRED)
+find_package(Torch QUIET)
+if (NOT Torch_FOUND)
+    message(FATAL_ERROR "LibTorch not found. Download LibTorch and extract it to ${PROJECT_SOURCE_DIR}/libtorch, or set Torch_DIR to your LibTorch share/cmake/Torch path.")
+endif ()
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${TORCH_CXX_FLAGS}")
 
 # Find OpenCV
