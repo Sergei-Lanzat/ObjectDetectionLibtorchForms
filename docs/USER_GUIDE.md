@@ -15,7 +15,7 @@ This application provides a modern WinForms GUI for training YOLO (You Only Look
 ## Requirements
 
 ### Software Dependencies
-- **Visual Studio 2019 or later** with C++/CLI support
+- **Visual Studio 2022 or later** with C++/CLI support
 - **LibTorch**: Download from https://pytorch.org/get-started/locally/
   - Choose C++/LibTorch with CUDA if using GPU
   - Extract and set environment variable `Torch_DIR` to the installation path

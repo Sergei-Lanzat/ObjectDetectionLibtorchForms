@@ -93,7 +93,7 @@ float calc(const BoundingBox& b1, const BoundingBox& b2) {
 ## Development Setup
 
 1. **Install prerequisites**:
-   - Visual Studio 2019+
+   - Visual Studio 2022+
    - LibTorch
    - OpenCV
    - CMake

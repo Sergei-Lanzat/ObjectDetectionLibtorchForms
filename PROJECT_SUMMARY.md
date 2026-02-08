@@ -147,7 +147,7 @@ ObjectDetectionLibtorchForms/
 
 **Software**:
 - Windows 10/11 (64-bit)
-- Visual Studio 2019+ with C++/CLI
+- Visual Studio 2022+ with C++/CLI
 - LibTorch 2.0+
 - OpenCV 4.x
 - CMake 3.18+

@@ -38,7 +38,7 @@ The project consists of two main components:
 
 ### Software
 - **Windows 10/11** (64-bit)
-- **Visual Studio 2019 or later** with:
+- **Visual Studio 2022 or later** with:
   - Desktop development with C++
   - .NET desktop development
   - C++/CLI support
@@ -65,7 +65,7 @@ set OpenCV_DIR=C:\path\to\opencv\build
 
 # Build native library
 mkdir build && cd build
-cmake .. -G "Visual Studio 16 2019" -A x64
+cmake .. -G "Visual Studio 17 2022" -A x64
 cmake --build . --config Release
 
 # Open and build GUI in Visual Studio

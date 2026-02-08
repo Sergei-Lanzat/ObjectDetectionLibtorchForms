@@ -5,7 +5,7 @@
 Before building this project, ensure you have the following installed:
 
 ### 1. Visual Studio
-- **Version**: Visual Studio 2019 or later
+- **Version**: Visual Studio 2022 or later
 - **Workloads Required**:
   - Desktop development with C++
   - .NET desktop development
@@ -64,12 +64,12 @@ vcpkg install nlohmann-json
 
 4. **Configure with CMake**:
    ```cmd
-   cmake .. -G "Visual Studio 16 2019" -A x64 -DCMAKE_PREFIX_PATH="C:\path\to\libtorch"
+   cmake .. -G "Visual Studio 17 2022" -A x64 -DCMAKE_PREFIX_PATH="C:\path\to\libtorch"
    ```
    
    If you have CUDA:
    ```cmd
-   cmake .. -G "Visual Studio 16 2019" -A x64 ^
+   cmake .. -G "Visual Studio 17 2022" -A x64 ^
      -DCMAKE_PREFIX_PATH="C:\path\to\libtorch" ^
      -DCUDA_TOOLKIT_ROOT_DIR="C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.8"
    ```
@@ -194,7 +194,7 @@ ObjectDetectionLibtorchForms/
 
 ### C++/CLI Compilation Errors
 - Ensure Common Language Runtime Support is enabled
-- Set Platform Toolset correctly (v142 or v143)
+- Set Platform Toolset correctly (v143)
 - Check .NET Framework target version (4.7.2 or later)
 
 ### CUDA Errors

@@ -208,7 +208,7 @@ Create classes.txt
 ### Build Tools
 - **CMake 3.18+**: Build system for native library
 - **MSBuild**: Visual Studio build system
-- **Visual Studio 2019+**: IDE and compiler
+- **Visual Studio 2022+**: IDE and compiler
 
 ## Design Patterns
 
