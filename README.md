@@ -59,7 +59,7 @@ The project consists of two main components:
 git clone https://github.com/Sergei-Lanzat/ObjectDetectionLibtorchForms.git
 cd ObjectDetectionLibtorchForms
 
-# (Optional) Place downloaded LibTorch in ./libtorch to have CMake/VS pick it up automatically
+# Place downloaded LibTorch in ./libtorch so CMake/VS can configure successfully (or set Torch_DIR manually)
 
 # Set environment variables (adjust paths)
 set Torch_DIR=C:\path\to\libtorch\share\cmake\Torch
