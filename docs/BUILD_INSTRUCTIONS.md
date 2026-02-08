@@ -98,12 +98,14 @@ vcpkg install nlohmann-json
    - Right-click → Properties
    - Configuration: All Configurations
    - Platform: x64
+
+   The project now resolves LibTorch automatically using the `Torch_DIR` environment variable (point it to `...\libtorch\share\cmake\Torch`) or a `libtorch` folder placed next to the solution. If you prefer explicit paths, configure the fields below.
    
    **C/C++ → General → Additional Include Directories**:
    ```
    $(SolutionDir)include
-   C:\path\to\libtorch\include
-   C:\path\to\libtorch\include\torch\csrc\api\include
+   $(Torch_DIR)\..\..\..\include
+   $(Torch_DIR)\..\..\..\include\torch\csrc\api\include
    C:\path\to\opencv\build\include
    ```
    
